@@ -1,18 +1,20 @@
 var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
+  el : '#target',
+  template : _.template($("#booktemplate").html()),
   initialize : function(initialCollection){
-    // writing bare javscript related to templating below
-
-    var template = _.template($("#booktemplate").html());
-    $('#target').html(template({initialCollection}))
-
-
     console.log('libraryView initialized');
     this.render();
   },
-  render: function(){
-
+  render: function(i){
+    this.$el.html(this.template({i}));
     console.log('libraryview rendering')
+    this.renderBook();
+  },
+  renderBook: function(){
+
+    new app.BookView({});
+
   }
 })

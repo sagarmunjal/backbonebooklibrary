@@ -1,13 +1,12 @@
 var app = app || {};
 
 app.BookView = Backbone.View.extend({
-  initilize : function(){
+  initialize : function(){
     console.log('bookView initialized');
-    render();
+    this.render();
   },
   render: function(){
-    var template = _.template($("#booktemplate").html());
-    $("#target").append(template({data:data}));
+    console.log("bookView rendering started")
   }
 
 })
