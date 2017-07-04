@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>my backbone booklibrary</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+</head>
+
+	<body>
+
+		<!-- form starts  -->
+		<div class="section">
+			<div id="books">
+			<form class="bookForm">
+				<input type="file"/>
+				<label for="title">title</label><input id="title" type="text"/>
+				<label for="releaseDate">releaseDate</label><input id="releaseDate" type="releaseDate"/>
+				<label for="author">author</label><input id="author" type="text"/>
+				<label for="pages">pages</label><input id="pages" type="number"/>
+				<label for="opensource">opensource</label><input id="opensource" type="checkbox"/>
+			</form>
+			</div>
+		</div>
+
+		<div id='target'>
+		</div>
+		<!-- template script starts  -->
+			<script id="booktemplate" type="text/template">
+				<div class="section">
+					<%
+					_.each(data,function(i){
+						var name = i.name;
+						var releaseData = i.releaseDate
+						var author = i.author;
+
+					%>
+						<ul>
+							<li><%= name %></li>
+							<li><%= releaseDate %></li>
+							<li><%= author %></li>
+							<li><%= pages %></li>
+							<li><%= opensource %></li>
+						</ul>
+					<%
+					})
+					%>
+				</div>
+			</script>
+
+			<!-- scripting files in js folder  -->
+			<script type="text/javascript" src="./jquery/dist/jquery.min.js"></script>
+			<script type="text/javascript" src="./underscore/underscore-min.js"></script>
+			<script type="text/javascript" src="./backbone/backbone-min.js"></script>
+			<script type="text/javascript" src="./js/app.js"></script>
+
+	</body>
+</html>
