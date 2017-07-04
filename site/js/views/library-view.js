@@ -1,7 +1,11 @@
 var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
-  initilize : function(){
+  initialize : function(){
     console.log('libraryView initialized');
+    this.render();
+  },
+  render: function(){
+    console.log('libraryview rendering')
   }
 })

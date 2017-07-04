@@ -1,4 +1,4 @@
-
+var app = app || {};
 
 var data = [{ title: 'JavaScript: The Good Parts', author: 'Douglas Crockford', releaseDate: '2008', keywords: 'JavaScript Programming' },
 { title: 'The Little Book on CoffeeScript', author: 'Alex MacCaw', releaseDate: '2012', keywords: 'CoffeeScript Programming' },
@@ -7,12 +7,5 @@ var data = [{ title: 'JavaScript: The Good Parts', author: 'Douglas Crockford', 
 { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke', releaseDate: '2011', keywords: 'JavaScript Programming' }];
 
 console.log('initialized',data[0].title)
-// first method
-// var template = _.template($("#booktemplate").html());
-//
-// $("#bookContainer").append(template({data:data}));
 
-var template = _.template($("#booktemplate").html());
-$("#target").append(template({data:data}));
-
- //$("#bookContainer").html(_.template(_.template($("#booktemplate").html()),{data:data}));
+new app.LibraryView(data);

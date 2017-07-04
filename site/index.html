@@ -48,10 +48,16 @@
 			</script>
 
 			<!-- scripting files in js folder  -->
+			<!-- the javascript developer dependency file stack is always from the order top to bottom in which the dependent files are always included at the top and the main file is always included at the bottom -->
 			<script type="text/javascript" src="./jquery/dist/jquery.min.js"></script>
 			<script type="text/javascript" src="./underscore/underscore-min.js"></script>
 			<script type="text/javascript" src="./backbone/backbone-min.js"></script>
-			<script type="text/javascript" src="./js/app.js"></script>
+			<script type="text/javascript" src="/js/models/book.js"></script>
+			<script type="text/javascript" src="/js/collections/library.js"></script>
+			<script type="text/javascript" src="/js/views/book-view.js"></script>
+			<script type="text/javascript" src="/js/views/library-view.js"></script>
+			<script type="text/javascript" src="/js/app.js"></script>
+
 
 	</body>
 </html>
