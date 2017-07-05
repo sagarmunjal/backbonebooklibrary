@@ -4,6 +4,14 @@ app.BookView = Backbone.View.extend({
   tagname:'div',
   class: 'target',
   template : _.template($("#booktemplate").html()),
+  events : {
+    "click .delete" : "deleteBook"
+  },
+  deleteBook : function(){
+    
+    this.model.destroy();
+    this.remove();
+  },
   initialize : function(){
     console.log('bookView initialized');
   },
