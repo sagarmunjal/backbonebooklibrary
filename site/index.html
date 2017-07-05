@@ -19,20 +19,15 @@
 				<label for="pages">pages</label><input id="pages" type="number"/>
 				<label for="opensource">opensource</label><input id="opensource" type="checkbox"/>
 			</form>
+			<button id="add">+</button>
 			</div>
 		</div>
 
-		
+
 		<!-- template script starts  -->
 			<script id="booktemplate" type="text/template">
 				<div class="section">
-					<%
-					_.each(data,function(i){
-						var name = i.name;
-						var releaseData = i.releaseDate
-						var author = i.author;
 
-					%>
 						<ul>
 							<li><%= name %></li>
 							<li><%= releaseDate %></li>
@@ -40,9 +35,6 @@
 							<li><%= pages %></li>
 							<li><%= opensource %></li>
 						</ul>
-					<%
-					})
-					%>
 				</div>
 			</script>
 
