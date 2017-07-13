@@ -16,8 +16,7 @@
 				<label for="title">title</label><input id="title" type="text"/>
 				<label for="releaseDate">releaseDate</label><input id="releaseDate" type="releaseDate"/>
 				<label for="author">author</label><input id="author" type="text"/>
-				<label for="pages">pages</label><input id="pages" type="number"/>
-				<label for="opensource">opensource</label><input id="opensource" type="checkbox"/>
+				<label for="keywords">keywords</label><input id="keywords" type="checkbox"/>
 			</form>
 			<button id="add">+</button>
 
@@ -30,11 +29,10 @@
 				<div class="section">
 
 						<ul>
-							<li><%= name %></li>
+							<li><%= title %></li>
 							<li><%= releaseDate %></li>
 							<li><%= author %></li>
-							<li><%= pages %></li>
-							<li><%= opensource %></li>
+							<li><%= keywords %></li>
 						</ul>
 				</div>
 				<button class="delete">Delete</button>
