@@ -16,13 +16,15 @@ app.LibraryView = Backbone.View.extend({
           formData[el.id] = $(el).val();
         }
       });
-      this.collection.add(new app.BookModel(formData));
+      this.collection.create(formData);
   },
-  initialize : function(initialCollection){
-    console.log('libraryView initialized');
-    this.collection = new app.LibraryCollection(initialCollection);
-    this.render(initialCollection);
-    this.listenTo(this.collection,'add',this.renderBook)
+  initialize : function(){
+    this.collection = new app.LibraryCollection();
+    this.collection.fetch({reset:true});
+    this.render();
+
+    this.listenTo(this.collection,'add',this.renderBook);
+    this.listenTo(this.collection,'reset',this.render);
   },
   render: function(i){
     this.collection.each(function(i){

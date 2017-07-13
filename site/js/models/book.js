@@ -7,5 +7,9 @@ app.BookModel = Backbone.Model.extend({
     author: 'Authors name',
     pages: 'XX',
     openSource: false
+  },
+  parse : function(response){
+    response.id = response._id;
+    return response;
   }
 });
