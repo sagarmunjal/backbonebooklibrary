@@ -50,6 +50,56 @@ app.post('/api/books',function(request,response){
       console.log(err);
     }
   })
+});
+
+// get request to get a single book
+
+app.get('/api/books/:id',function(request,response){
+  console.log('requested for a book');
+  return BookModelDB.findById(request.params._id,function(err,book){
+    console.log(request.params.id)
+    if(!err){
+      return response.send(book);
+    }else{
+      console.log(err);
+    }
+
+  })
+});
+
+// put request to update existing books
+
+app.put('/api/books/:id',function(request,response){
+  console.log('updating books' + request.body.title);
+  return BookModelDB.findById(request.params.id,function(err,book){
+    book.title = request.body.title;
+    book.author = request.body.author;
+    book.releaseDate = request.body.releaseDate;
+
+    return book.save(function(err){
+      if(!err){
+        console.log('book updated');
+        return response.send(book);
+      }else{
+        console.log(err);
+      }
+    })
+  })
+});
+
+// delete a book from the book library
+
+app.delete('/api/books/:id',function(request,response){
+  console.log('Deleted' + request.body.title);
+  return BookModelDB.findById(request.params.id,function(err,book){
+    return book.remove(function(err){
+      if(!err){
+        console.log('book deleted!!')
+      }else{
+        console.log(err);
+      }
+    })
+  })
 })
 
 var port = 4711;
